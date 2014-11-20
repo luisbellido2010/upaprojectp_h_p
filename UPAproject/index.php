@@ -6,8 +6,9 @@
         <title></title>
     </head>
     <body>
-        <?php
-        echo 'Saludos';
-        ?>
+        <ul>
+            <li><a href="cp/view/Roles/">Ir a la vista Roles</a></li>
+        </ul>       
+        <?php // echo phpinfo() ?>
     </body>
 </html>
