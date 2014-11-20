@@ -13,7 +13,7 @@
                 $('#tbLista').datagrid({
                     title: 'Control de Roles',
                     toolbar: '#toolbar',
-                    rownumbers: true,
+                    rownumbers: false,
                     remoteSort: false,
                     nowrap: false,
                     fitColumns: true,
