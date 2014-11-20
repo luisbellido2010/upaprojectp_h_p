@@ -32,6 +32,20 @@
                         error("Error en el Servidor<br>Contacte con el Administrador de Sistema")
                     }
                 });
+                $('#tbLista').datagrid('getPanel').panel('panel').attr('tabindex', 1).bind('keypress', function (e) {
+                    if (e.keyCode == 46) {
+                        Eliminar();
+                    }
+                    var selected = $("#tbLista").datagrid('getSelected');
+                    var index = $('#tbLista').datagrid('getRowIndex', selected);
+                    var evt = e.keyCode;
+                    if (evt == 38) {
+                        $('#tbLista').datagrid('selectRow', selected ? index - 1 : 0);
+                    }
+                    if (evt == 40) {
+                        $('#tbLista').datagrid('selectRow', selected ? index + 1 : 0);
+                    }
+                });
             }
             function frmRol() {
                 $('#divRol').dialog({
@@ -96,7 +110,8 @@
                 $('#frmRol').form('submit', {
                     url: url,
                     onSubmit: function (param) {
-                        return $(this).form('enableValidation').form('validate');;
+                        return $(this).form('enableValidation').form('validate');
+                        ;
                     },
                     success: function (result) {
                         var result = eval('(' + result + ')');
@@ -115,7 +130,7 @@
         <div id="contenedor">
             <div id="cabecera">
                 <center>
-                    <h2>Mantenimiento Básico</h2>
+                    <h2>Mantenimiento Básico - ROLES</h2>
                 </center>
             </div>
             <div style="clear: both;"></div>
@@ -123,6 +138,12 @@
                 <div style="margin: 0 auto; width: 500px;">
                     <table id="tbLista" style="width:400px;height:250px"></table>
                 </div>
+                <p>
+                <center>
+                    <a href="../../index.php">Retornar</a>
+                </center>
+                </p>
+
                 <div id="toolbar">
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="Agregar()">Agregar</a>
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="Editar()">Editar</a>

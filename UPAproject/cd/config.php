@@ -1,7 +1,7 @@
 <?php
 
 define("hostname", "localhost");
-define("dbuser", "root");
-define("dbpass", "123");
+define("dbuser", "tareas");
+define("dbpass", "tareas");
 define("dbname", "seguridad");
 ?>

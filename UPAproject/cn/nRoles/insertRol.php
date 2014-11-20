@@ -15,7 +15,7 @@ function exceptions_error_handler($severity, $message, $filename, $lineno) {
 try {
     $pnombre =  trim($_POST['nombre']);
     $pro = new dRoles();
-    $pro->dInsertRol($pdnombre);
+    $pro->dInsertRol($pnombre);
     if ($pro->getStmt()) {
         echo json_encode(array(
             'id' => mysql_insert_id(),
