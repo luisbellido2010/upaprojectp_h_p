@@ -1,6 +1,7 @@
 <?php
 
 require '../../cd/dRoles.php';
+include '../validatorinput.php';
 try {
     $pro = new dRoles();
     $result = array();
