@@ -11,7 +11,7 @@
             });
             function CargarLista() {
                 $('#tbLista').datagrid({
-                    title: 'Control de Roles',
+                    title: 'Control de Usuarios',
                     toolbar: '#toolbar',
                     rownumbers: false,
                     remoteSort: false,
@@ -68,6 +68,11 @@
                                 $('#divRol').dialog('close');
                             }
                         }]
+                });
+                $('#divRol').dialog('dialog').attr('tabIndex', '-1').bind('keydown', function (e) {
+                    if (e.keyCode == 27) {
+                        $('#divRol').dialog('close');
+                    }
                 });
             }
             var url = null;
@@ -130,7 +135,7 @@
         <div id="contenedor">
             <div id="cabecera">
                 <center>
-                    <h2>Mantenimiento Básico - ROLES</h2>
+                    <h2>Mantenimiento Básico - USUARIOS</h2>
                 </center>
             </div>
             <div style="clear: both;"></div>

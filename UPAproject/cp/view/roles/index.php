@@ -69,6 +69,11 @@
                             }
                         }]
                 });
+                $('#divRol').dialog('dialog').attr('tabIndex', -1).bind('keydown', function (e) {
+                    if (e.keyCode == 27) {
+                        $('#divRol').dialog('close');
+                    }
+                });
             }
             var url = null;
             function Agregar() {
