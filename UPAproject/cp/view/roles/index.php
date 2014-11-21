@@ -93,18 +93,21 @@
                     alertmsg('Debe seleccionar una fila');
                 }
             }
+            function eliminarol(idrol) {
+                $.post('../../../cn/nRoles/deleteRol.php', {id: idrol}, function (result) {
+                    if (result.success) {
+                        $('#tbLista').datagrid('reload');
+                    } else {
+                        error(result.errorMsg);
+                    }
+                }, 'json');
+            }
             function Eliminar() {
                 var row = $('#tbLista').datagrid('getSelected');
                 if (row) {
                     $.messager.confirm('Confirm', 'Esta seguro de eliminar el Rol seleccionado?', function (r) {
                         if (r) {
-                            $.post('../../../cn/nRoles/deleteRol.php', {id: row.id}, function (result) {
-                                if (result.success) {
-                                    $('#tbLista').datagrid('reload');
-                                } else {
-                                    error(result.errorMsg);
-                                }
-                            }, 'json');
+                            eliminarol(row.id);
                         }
                     });
                 } else {
