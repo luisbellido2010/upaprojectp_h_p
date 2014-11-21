@@ -18,7 +18,7 @@
                     var row = $('#tbLista').datagrid('getSelected');
                     contenido = row.id;
                     //alertmsg(contenido);
-                    //$('#dd').dialog('close');
+                    $('#dd').dialog('close');
                 },
                 onLoadError: function (XMLHttpRequest, textStatus, errorThrown) {
                     error("Error en el Servidor<br>Contacte con el Administrador de Sistema")

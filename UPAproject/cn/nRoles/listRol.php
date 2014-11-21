@@ -11,6 +11,6 @@ try {
     }
     echo json_encode($result);
 } catch (Exception $er) {
-    trigger_error($er->getMessage());
+    //trigger_error($er->getMessage());
     echo json_encode(array('errorMsg' => $er->getMessage()));
 }

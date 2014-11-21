@@ -157,6 +157,7 @@
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="Editar()">Editar</a>
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="Eliminar()">Eliminar</a>
                 </div>
+                
                 <div id="divRol">
                     <form id="frmRol" method="post" data-options="novalidate:true" class="easyui-form">
                         <table cellpadding="5">
