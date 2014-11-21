@@ -25,7 +25,6 @@
                      data-options="href:'../general/consultapersona.php'">
                 </div>
                 <p>
-                    <input type="button" id="btn" value="Buscar Usuarios" onclick="cargapag();">
                     <input type="button" id="btn" value="Ver contenido" onclick="alert(contenido)">
                 </p>
                 <p style="text-align: center;">
