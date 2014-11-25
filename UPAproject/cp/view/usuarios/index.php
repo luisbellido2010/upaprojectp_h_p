@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Roles</title>
+        <title>Usuarios</title>
         <?php include '../plugins.php'; ?>
         <script src="../../js/procesos/consultageneral.js"></script>
         <script type="text/javascript">

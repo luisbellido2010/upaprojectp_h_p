@@ -9,6 +9,11 @@ class dRoles extends dConexion {
         return $this->getQuery($query);
     }
 
+    function dUserLisRol($p_rol_id) {
+        $query = "SELECT id, usuario FROM usuarios WHERE rol_id=$p_rol_id";
+        return $this->getQuery($query);
+    }
+
     function dInsertRol($pnombre) {
         $query = "INSERT INTO rol (nombre) VALUES('$pnombre')";
         return $this->getQuery($query);

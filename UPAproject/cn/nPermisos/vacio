@@ -1,0 +1,15 @@
+//
+//$json = json_encode(
+//        array(
+//            0 => array(
+//                'Inglés' => array(
+//                    'One',
+//                    'January'
+//                ),
+//                'Francés' => array(
+//                    'Une',
+//                    'Janvier'
+//                )
+//            )
+//        )
+//);
