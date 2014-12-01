@@ -5,23 +5,21 @@ ini_set("html_errors", true);
 
 class TreeNode {
 
-    public $text = "";
     public $id = "";
-    public $iconCls = "";
-    public $leaf = true;
-    public $draggable = false;
-    public $href = "#";
-    public $hrefTarget = "";
+    public $text = "";
+    public $children = Array();
+    public $state = "";
+    public $checked = false;
 
-    function __construct($id, $text, $iconCls, $leaf, $draggable, $href, $hrefTarget) {
+     function __construct($id, $text) {
+      $this->id = $id;
+      $this->text = $text;
+      }
 
+    function __construct1($id, $text, $children) {
         $this->id = $id;
         $this->text = $text;
-        $this->iconCls = $iconCls;
-        $this->leaf = $leaf;
-        $this->draggable = $draggable;
-        $this->href = $href;
-        $this->hrefTarget = $hrefTarget;
+        $this->children[] = $children;
     }
 
 }
@@ -30,18 +28,34 @@ class TreeNodes {
 
     protected $nodes = array();
 
-    function add($id, $text, $iconCls, $leaf, $draggable, $href, $hrefTarget) {
-        $n = new TreeNode($id, $text, $iconCls, $leaf, $draggable, $href, $hrefTarget);
+    function add($id, $text) {
+
+        $params = array('id' => 12354, 'text' => 54321);
+
+        $n = new TreeNode($id, $text, $params);
         $this->nodes[] = $n;
     }
-    
-    
 
     function toJson() {
         return json_encode($this->nodes);
     }
 
 }
+
+//class TreeNodes {
+//
+//    protected $nodes = array();
+//
+//    function add($id, $text, $iconCls, $leaf, $draggable, $href, $hrefTarget) {
+//        $n = new TreeNode($id, $text, $iconCls, $leaf, $draggable, $href, $hrefTarget);
+//        $this->nodes[] = $n;
+//    }
+//
+//    function toJson() {
+//        return json_encode($this->nodes);
+//    }
+//
+//}
 
 /*
   $n1 = new TreeNode("datasources","Datasources","data",true,false,"","");
@@ -55,10 +69,13 @@ class TreeNodes {
 
 
 $treeNodes = new TreeNodes();
+$treeNodes->add('123', 'Permisos Disponibles');
 
-$treeNodes->add("datasources", "Datasources", "data", true, false, "", "");
-$treeNodes->add("datasets", "Datasets", "dataset", true, false, "", "");
-$treeNodes->add("reports", "Reports", "report", true, false, "", "");
+//
+//$treeNodes->add("datasources", "Datasources", "data", true, false, "", "");
+//$treeNodes->add("datasets", "Datasets", "dataset", true, false, "", "");
+//$treeNodes->add("reports", "Reports", "report", true, false, "", "");
+//
 
 echo $treeNodes->toJson();
 ?>
