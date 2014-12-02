@@ -1,6 +1,6 @@
 <?php
 
-class tree {
+class treenode {
 
     public $id = "";
     public $text = "";

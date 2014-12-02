@@ -13,3 +13,31 @@
 //            )
 //        )
 //);
+
+$a = array(
+    "uno" => 1,
+    "dos" => 2,
+    "tres" => 3,
+    "diecisiete" => 17
+);
+
+foreach ($a as $k => $v) {
+    echo "\$a[$k] => $v.\n";
+}
+
+//
+//$pro = new dRoles();
+////$proc = new dRoles();
+//$pro->dListaRol();
+//
+//while ($row = $pro->getDataR()) {
+//echo $row->id;
+////$pro->dUserLisRol($row->id);
+////getData($row->id);
+////    while($r=  getData($row->id)){
+////        
+////    }
+////$pro->dUserLisRol($row->id);
+////$submenu = array();
+////$menu[] = new treenode($row->id, $row->nombre, $submenu);
+//}

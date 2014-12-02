@@ -3,7 +3,7 @@
 ini_set("display_errors", true);
 ini_set("html_errors", true);
 
-class TreeNode {
+class TreeNodeee {
 
     public $id = "";
     public $text = "";
@@ -102,7 +102,6 @@ for ($i = 0; $i < 3; $i++) {
 }
 
 $principal = array();
-$n = new TreeNode('123', 'Permisos del Sistema', $menu);
-$principal[] = $n;
+$principal[] = new TreeNode('123', 'Permisos del Sistema', $menu);
 echo json_encode($principal);
 ?>
