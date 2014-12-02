@@ -3,7 +3,7 @@
 ini_set("display_errors", true);
 ini_set("html_errors", true);
 
-class TreeNode {
+class TreeAANode {
 
     public $text = "";
     public $id = "";
