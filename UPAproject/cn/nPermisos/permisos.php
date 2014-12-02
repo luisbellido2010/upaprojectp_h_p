@@ -31,21 +31,25 @@ echo json_encode($principal);
 //DECLARARION DE CLASE DE NEGOCIO
 class nPermiso {
 
+    protected $obj;
+
+    public function __construct() {
+        $this->obj = new dRoles();
+    }
+
     function nListRol() {
-        $obj = new dRoles();
-        $obj->dListaRol();
+        $this->obj->dListaRol();
         $array = array();
-        while ($r = $obj->getDataR()) {
+        while ($r = $this->obj->getDataR()) {
             $array[] = new treenode($r->id, $r->nombre);
         }
         return $array;
     }
 
     function nListUserRol($idrol) {
-        $obj = new dRoles();
-        $obj->dUserLisRol($idrol);
+        $this->obj->dUserLisRol($idrol);
         $array = array();
-        while ($r = $obj->getDataR()) {
+        while ($r = $this->obj->getDataR()) {
             $array[] = new treenode($r->id, $r->usuario);
         }
         return $array;
