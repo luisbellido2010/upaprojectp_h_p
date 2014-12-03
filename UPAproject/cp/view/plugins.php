@@ -6,3 +6,4 @@
 <script src="../../js/funcgeneral.js"></script>
 <script src="../../js/jqueryeasy/jquery.easyui.min.js"></script>
 <script src="../../js/jqueryeasy/locale/easyui-lang-es.js"></script>
+<?php echo 'Saludo'?>
