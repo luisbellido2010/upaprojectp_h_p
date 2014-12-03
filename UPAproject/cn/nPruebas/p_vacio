@@ -41,3 +41,8 @@ foreach ($a as $k => $v) {
 ////$submenu = array();
 ////$menu[] = new treenode($row->id, $row->nombre, $submenu);
 //}
+
+//$submenux = array();
+        //foreach ($per->nListUserRol($idrol)as $con => $row) {
+        //    $submenux[$con] = new treenode($row->id, $row->text);
+        //}$submenux

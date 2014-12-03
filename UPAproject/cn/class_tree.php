@@ -25,7 +25,13 @@ class treenode {
         $this->text = $text;
     }
 
-    function __construct3($id, $text, $children) {
+    function __construct3($id, $text, $checked) {
+        $this->id = $id;
+        $this->text = $text;
+        $this->checked = $checked;
+    }
+
+    function __construct4($id, $text, $children) {
         $this->id = $id;
         $this->text = $text;
         $this->children = $children;
