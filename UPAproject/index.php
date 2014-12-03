@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>UPA</title>
-        <?php include './cp/view/plugins.php'; ?>
+        <?php
+        $cad = 'cp/';
+        include './cp/view/plugins.php';
+        ?>
     </head>
     <body>
         <?php

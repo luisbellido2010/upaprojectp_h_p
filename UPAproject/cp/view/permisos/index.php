@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Permisos</title>
-        <?php include '../plugins.php'; ?>
+        <?php
+        $cad = '../../';
+        include '../plugins.php';
+        ?>
         <script type="text/javascript">
             $(function () {
                 MostrarPermisos()
