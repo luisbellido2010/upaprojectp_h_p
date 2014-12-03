@@ -14,11 +14,7 @@ foreach ($per->nListRol() as $c => $r) {
     $idrol = $r->id;
     $submenu = array();
     foreach ($per->nListUserRol($idrol)as $co => $ro) {
-        $submenux = array();
-        foreach ($per->nListUserRol($idrol)as $con => $row) {
-            $submenux[$con] = new treenode($row->id, $row->text);
-        }
-        $submenu[$co] = new treenode($ro->id, $ro->text, $submenux);
+        $submenu[$co] = new treenode($ro->id, $ro->text);
     }
     $menu[$c] = new treenode($idrol, $r->text, $submenu);
 }
