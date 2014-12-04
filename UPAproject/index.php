@@ -11,7 +11,6 @@
             .wrapper {
                 background-color: #AAA;
                 color: #000;
-                /*height: 300px;*/
                 width: 400px;
                 position: absolute;
                 left: 50%;
@@ -20,6 +19,14 @@
                 margin-top: -180px;
             }
         </style>
+        <script type="text/javascript">
+            var data = 'mypage';
+            $(function () {
+                $('#loginsys').click(function () {
+                    window.location.href = data;
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="wrapper">
@@ -31,7 +38,7 @@
                     <input class="easyui-textbox" type="password" style="width:100%;height:40px;padding:12px" data-options="prompt:'Contraseña',iconCls:'icon-lock',iconWidth:38">
                 </div>
                 <div style="text-align: right;">
-                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="padding:5px 0px;width:100px;">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" id="loginsys" data-options="iconCls:'icon-ok'" style="padding:5px 0px;width:100px;">
                         <span style="font-size:14px;">Ingresar</span>
                     </a>
                 </div>
