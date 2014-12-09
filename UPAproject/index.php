@@ -74,6 +74,7 @@
             var data = 'mypage';
             $(function () {
                 $('#loginsys').click(function () {
+                    $("#msgrpta").show();
                     setTimeout(function () {
                         $("#msgrpta").hide();
                     }, 3000);
