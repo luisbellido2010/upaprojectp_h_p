@@ -7,69 +7,7 @@
         $cad = 'cp/';
         include './cp/view/plugins.php';
         ?>
-        <style>
-            .wrapper {
-                background-color: #AAA;
-                color: #000;
-                width: 400px;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                margin-left: -200px;
-                margin-top: -180px;
-            }
-            .error{
-                color: #d8000c;
-                background-color: #ffbaba;
-                border-color: #d8000c;
-                clear: both;	
-                height:18px;
-                border-width: 1px;
-                border-style: solid;
-                margin-right:-4px;
-                padding: 0px;
-                background-repeat: no-repeat;
-                background-position: 0px 50%;
-                text-align: left;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                border-radius: 5px;
-                padding-left: 5px;
-            }
-            .box-info, .box-success, .box-alert, .box-error{
-                clear: both;
-                border-width: 1px;
-                border-style: solid;
-                margin: 0px;
-                padding: 0px;
-                background-repeat: no-repeat;
-                background-position: 0px 50%;
-                text-align: left;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                border-radius: 5px;
-            }
-            .box-info {
-                color: #00529b;
-                background-color: #bde5f8;
-                border-color: #00529b;
-            }
-            .box-success {
-                color: #4f8a10;
-                background-color: #dff2bf;
-                border-color: #4f8a10;
-            }
-            .box-alert {
-                color: #9f6000;
-                background-color: #feefb3;
-                border-color: #9f6000;
-            }
-            .box-error {
-                color: #d8000c;
-                background-color: #ffbaba;
-                border-color: #d8000c;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             var data = 'mypage';
             $(function () {
@@ -78,22 +16,12 @@
                     setTimeout(function () {
                         $("#msgrpta").hide();
                     }, 3000);
-//                    //window.location.href = data;
-//                    $('#msgrpta').html('<div class="box-success"></div>');
-//                    $('.box-success').hide(0).html('Un momento por favor,Estamos cargando...');
-//                    $('.box-success').slideDown(1000);
-//                    setTimeout(function () {
-//                        //window.location.href = ".";
-//                        //$("#enter").attr("disabled", true);
-//                        //alert("ok")
-//                        //completa(".");
-//                    }, (1000 + 800));
                     $('#msgrpta').html('<div class="error"></div>');
                     $('.error').hide(0).html('Los campos estan vacios');
                     $('.error').slideDown(1000);
-
                 });
             });
+            
         </script>
     </head>
     <body>
