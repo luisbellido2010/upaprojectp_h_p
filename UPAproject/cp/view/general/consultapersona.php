@@ -16,9 +16,11 @@
                     ]],
                 onClickRow: function () {
                     var row = $('#tbLista').datagrid('getSelected');
-                    contenido = row.id;
-                    //alertmsg(contenido);
-                    $('#dd').dialog('close');
+                    if (row) {
+                        contenido = row.id;
+                        descripcion = row.nombre;
+                        addrow('#dg');
+                    }
                 },
                 onLoadError: function (XMLHttpRequest, textStatus, errorThrown) {
                     error("Error en el Servidor<br>Contacte con el Administrador de Sistema")

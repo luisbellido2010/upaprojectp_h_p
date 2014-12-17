@@ -1,4 +1,5 @@
 var contenido = null;
+var descripcion = null;
 function cargapag() {
     $('#dd').dialog({
         title: 'Consulta de Personas',
@@ -6,7 +7,7 @@ function cargapag() {
         height: 200,
         closed: false,
         cache: false,
-        href: '../general/consultapersona_1.php',
+        href: '../general/consultapersona.php',
         modal: false,
         buttons: [{
                 text: 'Aceptar',
@@ -15,7 +16,8 @@ function cargapag() {
                     var row = $('#tbLista').datagrid('getSelected');
                     if (row) {
                         contenido = row.id;
-                        $('#dd').dialog('close');
+                        descripcion = row.nombre;
+                        addrow('#dg');
                     } else {
                         alertmsg('Debe seleccionar una fila');
                     }
