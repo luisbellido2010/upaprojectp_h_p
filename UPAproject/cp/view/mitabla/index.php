@@ -55,65 +55,23 @@
             }
 
             function recorretable() {
-                var roles[];
-                
+                var facturas = [];
                 var rows = $('#dg').datagrid('getRows');
                 for (var i = 0; i < rows.length; i++) {
                     var row = rows[i];
                     //alert(row.code + ' - ' + row.name + ' - ' + row.price);
-                    
                 }
-                
-                var newUsers = [];
-                newUser = {};
-                newUser['nome'] = 'alvaro';
-                newUser['idade'] = '34';
-                newUsers.push(JSON.stringify(newUser));
-
-                newUser1 = {};
-                newUser1['nome'] = 'bia';
-                newUser1['idade'] = '7';
-                newUsers.push(JSON.stringify(newUser1));
-                newUser2 = {};
-                newUser2['nome'] = 'alice';
-                newUser2['idade'] = '2';
-                newUsers.push(JSON.stringify(newUser2));
-                
-                
                 $.ajax({
                     url: "getdata.php",
                     type: "POST",
                     data: {
-                        'newUsers[]': newUsers
+                        'facturas[]': facturas
                     },
                     success: function () {
                     },
                     error: function () {
                     }
                 });
-                
-
-//                //$.messager.alert("Almacenado de detalles exitoso y se insertaron  " + jsondata.detalle + " registros");
-//                $.ajax({
-//                    type: "POST",
-//                    url: "getdata.php",
-//                    data: {
-//                        //registros: 'newUsdsasers'
-//                        'registros[]': newUsers
-//                    },
-//                    //dataType: "json",
-//                    success: function (jsondata) {
-//                        alert(jsondata)
-//                    },
-//                    error: function (xhr, ajaxOptions, thrownError) {
-//                        alert(xhr.status);
-//                        alert(thrownError);
-//                    },
-//                    complete: function () {
-//                        //EnviaDatos(2);
-//                    }
-//                });
-
             }
         </script>
     </head>

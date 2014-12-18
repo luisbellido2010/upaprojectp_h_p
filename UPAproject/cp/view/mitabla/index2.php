@@ -87,7 +87,40 @@
                     error: function () {
                     }
                 });
-                
+
+                var myarray = [];
+                var myJSON = "";
+
+                for (var i = 0; i < 10; i++) {
+
+                    var item = {
+                        "nome": i,
+                        "idade": i
+                    };
+
+                    //myarray.push(item);
+                    myarray.push(JSON.stringify(item));
+                }
+
+                //myJSON = JSON.stringify({myarray: myarray});
+
+
+                var newUsers = [];
+                newUser = {};
+                newUser['nome'] = 'alvaro';
+                newUser['idade'] = '34';
+                newUsers.push(JSON.stringify(newUser));
+
+                newUser1 = {};
+                newUser1['nome'] = 'bia';
+                newUser1['idade'] = '7';
+                newUsers.push(JSON.stringify(newUser1));
+                newUser2 = {};
+                newUser2['nome'] = 'alice';
+                newUser2['idade'] = '2';
+                newUsers.push(JSON.stringify(newUser2));
+
+
 
 //                //$.messager.alert("Almacenado de detalles exitoso y se insertaron  " + jsondata.detalle + " registros");
 //                $.ajax({
