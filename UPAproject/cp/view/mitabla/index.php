@@ -55,23 +55,18 @@
             }
 
             function recorretable() {
-                var cab_fact = null;
-                var det_fact = new Array();
-                var itemc = {
-                    "p_codfac": 'V0001',
-                    "p_tipmod": 'SOL'
-                };
-                cab_fact = JSON.stringify(itemc);
-                var rows = $('#dg').datagrid('getData');
-                det_fact.push(JSON.stringify(rows));
                 $.ajax({
                     url: "getdata.php",
                     type: "POST",
                     data: {
-                        'cab_fact': cab_fact,
-                        'det_fact': det_fact
+                        'cab_fact': JSON.stringify({
+                            "p_codfac": 'V0001',
+                            "p_tipmod": 'SOL'
+                        }),
+                        'det_fact': JSON.stringify($('#dg').datagrid('getData'))
                     },
                     success: function () {
+                        alert('OK');
                     },
                     error: function () {
                     }

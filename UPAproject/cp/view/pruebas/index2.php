@@ -55,6 +55,17 @@
             }
 
             function recorretable() {
+                //var rows = $('#dg').datagrid('getData');
+                //det_fact.push(JSON.stringify(rows));
+                //JSON.stringify($('#dg').datagrid('getData'));
+                var cab_fact = null;
+                var det_fact = new Array();
+                var itemc = {
+                    "p_codfac": 'V0001',
+                    "p_tipmod": 'SOL'
+                };
+                cab_fact = JSON.stringify(itemc);
+
 
                 var rows = $('#dg').datagrid('getRows');
                 for (var i = 0; i < rows.length; i++) {

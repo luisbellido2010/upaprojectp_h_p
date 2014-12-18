@@ -5,8 +5,9 @@ $det_fact = $_POST['det_fact'];
 $cab = json_decode($cab_fact, TRUE);
 echo $cab['p_codfac'] . $cab['p_tipmod'];
 print '<br>';
-foreach ($det_fact as $det) {
-    $df = json_decode($det);
-    echo "Codigo: " . $df->p_code;
+$det = json_decode($det_fact, TRUE);
+echo $det['total'];
+foreach ((array) $det['rows'] as $de) {
+    echo $de['code'] . $de['name'] . $de['price'];
 }
 ?>
