@@ -21,7 +21,6 @@
                         ]]
                 });
             });
-
             function addrow(idtabla) {
                 var existe = false;
                 var rows = $('#dg').datagrid('getRows');
@@ -68,9 +67,11 @@
                     success: function () {
                         alert('OK');
                     },
-                    error: function () {
+                    error: function (result) {
+                        alert(result)
                     }
                 });
+
             }
         </script>
     </head>

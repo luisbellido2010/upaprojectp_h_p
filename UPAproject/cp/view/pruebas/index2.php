@@ -140,7 +140,7 @@
                     };
                     det_fact.push(JSON.stringify(itemd));
                 });
-                
+
 //                //$.messager.alert("Almacenado de detalles exitoso y se insertaron  " + jsondata.detalle + " registros");
 //                $.ajax({
 //                    type: "POST",
@@ -161,7 +161,23 @@
 //                        //EnviaDatos(2);
 //                    }
 //                });
+                $.ajax({
+                    url: "getdata.php",
+                    type: "POST",
+                    data: {
+                        'cab_fact': JSON.stringify({
+                            "p_codfac": 'V0001',
+                            "p_tipmod": 'SOL'
+                        }),
+                        'det_fact': JSON.stringify($('#dg').datagrid('getData'))
+                    },
+                    success: function () {
+                        alert('OK');
+                    },
+                    error: function () {
 
+                    }
+                });
             }
         </script>
     </head>
