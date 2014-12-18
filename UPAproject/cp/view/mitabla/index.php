@@ -72,7 +72,6 @@
                         alert(result)
                     }
                 });
-
             }
         </script>
     </head>
