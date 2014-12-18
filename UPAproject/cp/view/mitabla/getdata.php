@@ -7,14 +7,12 @@ $cab = json_decode($cab_fact, TRUE);
 //print '<br>';
 $det = json_decode($det_fact, TRUE);
 //echo $det['total'];
-$detrow=(array) $det['rows'];
+$detrow = (array) $det['rows'];
 foreach ($detrow as $row) {
-    echo $row['code'] . $row['name'] . $row['price'];
+    //echo $row['code'] . $row['name'] . $row['price'];
 }
-
-//echo json_encode(array(
-//    'succesMsg' => $cab['p_codfac'],
-//    'detailMsg' => $cab['p_tipmod']
-//));
-
+echo json_encode(array(
+    'succesMsg' => $cab['p_codfac'],
+    'detailMsg' => $cab['p_tipmod']
+));
 ?>
