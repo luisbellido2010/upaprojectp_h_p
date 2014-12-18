@@ -55,11 +55,17 @@
             }
 
             function recorretable() {
-                var facturas = [];
+                var facturas = new Array();
+                ;
                 var rows = $('#dg').datagrid('getRows');
                 for (var i = 0; i < rows.length; i++) {
                     var row = rows[i];
-                    //alert(row.code + ' - ' + row.name + ' - ' + row.price);
+                    var item = {
+                        "p_code": row.code,
+                        "p_name": row.name,
+                        "p_price": row.price
+                    };
+                    facturas.push(JSON.stringify(item));
                 }
                 $.ajax({
                     url: "getdata.php",
@@ -79,8 +85,6 @@
         <div id="dd"></div>
         <p>
             <input type="button" id="btnLst" value="Cargar Lista" onclick="cargapag()">
-<!--            <input type="button" id="btnCon" value="Ver contenido" onclick="alert(contenido)">
-            <input type="button" id="btnAdd" value="Agregar Fila" onclick="addrow()">-->
             <input type="button" id="btnRec" value="Ver Data" onclick="recorretable()">
             <input type="button" id="btnDel" value="Eliminar Fila" onclick="deleterow()">
         </p>
