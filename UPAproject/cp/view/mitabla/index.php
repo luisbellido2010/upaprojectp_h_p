@@ -55,23 +55,29 @@
             }
 
             function recorretable() {
-                var facturas = new Array();
-                ;
+                var cab_fact = null;
+                var det_fact = new Array();
+                var itemc = {
+                    "p_codfac": 'V0001',
+                    "p_tipmod": 'SOL'
+                };
+                cab_fact = JSON.stringify(itemc);
                 var rows = $('#dg').datagrid('getRows');
                 for (var i = 0; i < rows.length; i++) {
                     var row = rows[i];
-                    var item = {
+                    var itemd = {
                         "p_code": row.code,
                         "p_name": row.name,
                         "p_price": row.price
                     };
-                    facturas.push(JSON.stringify(item));
+                    det_fact.push(JSON.stringify(itemd));
                 }
                 $.ajax({
                     url: "getdata.php",
                     type: "POST",
                     data: {
-                        'facturas[]': facturas
+                        'cab_fact': cab_fact,
+                        'det_fact': det_fact
                     },
                     success: function () {
                     },

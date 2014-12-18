@@ -1,14 +1,12 @@
 <?php
 
-//$newUsers = $_POST['newUsers'];
-//foreach ($newUsers as $user) {
-//    $usr = json_decode($user);
-//    echo "Nome: " . $usr->nome . " - Idade: " . $usr->idade;
-//}
-
-$facturas = $_POST['facturas'];
-foreach ($facturas as $fac) {
-    $f = json_decode($fac);
-    echo "Codigo: " . $f->p_code;
+$cab_fact = $_POST['cab_fact'];
+$det_fact = $_POST['det_fact'];
+$cab = json_decode($cab_fact, TRUE);
+echo $cab['p_codfac'] . $cab['p_tipmod'];
+print '<br>';
+foreach ($det_fact as $det) {
+    $df = json_decode($det);
+    echo "Codigo: " . $df->p_code;
 }
 ?>
