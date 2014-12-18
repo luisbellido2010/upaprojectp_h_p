@@ -57,6 +57,7 @@
                 $.ajax({
                     url: "getdata.php",
                     type: "POST",
+                    dataType: "json",
                     data: {
                         'cab_fact': JSON.stringify({
                             "p_codfac": 'V0001',
@@ -64,8 +65,8 @@
                         }),
                         'det_fact': JSON.stringify($('#dg').datagrid('getData'))
                     },
-                    success: function () {
-                        alert('OK');
+                    success: function (result) {
+                        alert('OK ' + result.succesMsg);
                     },
                     error: function (result) {
                         alert(result)
