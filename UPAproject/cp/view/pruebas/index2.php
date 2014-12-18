@@ -59,7 +59,7 @@
                 var rows = $('#dg').datagrid('getRows');
                 for (var i = 0; i < rows.length; i++) {
                     var row = rows[i];
-                    //alert(row.code + ' - ' + row.name + ' - ' + row.price);
+                    alert(row.code + ' - ' + row.name + ' - ' + row.price);
                 }
                 var newUsers = [];
 

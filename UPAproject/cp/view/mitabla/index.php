@@ -63,15 +63,14 @@
                 };
                 cab_fact = JSON.stringify(itemc);
                 var rows = $('#dg').datagrid('getRows');
-                for (var i = 0; i < rows.length; i++) {
-                    var row = rows[i];
+                $.each(rows, function (i, row) {
                     var itemd = {
                         "p_code": row.code,
                         "p_name": row.name,
                         "p_price": row.price
                     };
                     det_fact.push(JSON.stringify(itemd));
-                }
+                });
                 $.ajax({
                     url: "getdata.php",
                     type: "POST",
