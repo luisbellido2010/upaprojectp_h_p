@@ -62,15 +62,8 @@
                     "p_tipmod": 'SOL'
                 };
                 cab_fact = JSON.stringify(itemc);
-                var rows = $('#dg').datagrid('getRows');
-                $.each(rows, function (i, row) {
-                    var itemd = {
-                        "p_code": row.code,
-                        "p_name": row.name,
-                        "p_price": row.price
-                    };
-                    det_fact.push(JSON.stringify(itemd));
-                });
+                var rows = $('#dg').datagrid('getData');
+                det_fact.push(JSON.stringify(rows));
                 $.ajax({
                     url: "getdata.php",
                     type: "POST",

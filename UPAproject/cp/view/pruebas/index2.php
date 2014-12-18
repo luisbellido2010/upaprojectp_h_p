@@ -120,8 +120,16 @@
                 newUser2['idade'] = '2';
                 newUsers.push(JSON.stringify(newUser2));
 
-
-
+                var rows = $('#dg').datagrid('getRows');
+                $.each(rows, function (i, row) {
+                    var itemd = {
+                        "p_code": row.code,
+                        "p_name": row.name,
+                        "p_pric": row.price
+                    };
+                    det_fact.push(JSON.stringify(itemd));
+                });
+                
 //                //$.messager.alert("Almacenado de detalles exitoso y se insertaron  " + jsondata.detalle + " registros");
 //                $.ajax({
 //                    type: "POST",
