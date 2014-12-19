@@ -20,6 +20,7 @@
                             {field: 'price', title: 'Precio', width: 80, align: 'right'}
                         ]]
                 });
+                calendario();
             });
             function addrow(idtabla) {
                 var existe = false;
@@ -73,6 +74,51 @@
                     }
                 });
             }
+
+            function calendario() {
+                $('#dbFecNac').datebox({
+                    value: (new Date().toString('dd/MM/yyyy'))
+//                    formatter: function (date) {
+//                        var y = date.getFullYear();
+//                        var m = date.getMonth() + 1;
+//                        var d = date.getDate();
+//                        return d + '/' + m + '/' + y;
+//                    },
+//                    parser: function (s) {
+//                        var t = Date.parse(s);
+//                        if (!isNaN(t)) {
+//                            return new Date(t);
+//                        } else {
+//                            return null;
+//                        }
+//                    }
+                });
+            }
+
+            /*----------Funcion para obtener la edad------------*/
+            function calcular_edad(fecha) {
+                var fechaActual = new Date()
+                var diaActual = fechaActual.getDate();
+                var mmActual = fechaActual.getMonth() + 1;
+                var yyyyActual = fechaActual.getFullYear();
+                FechaNac = fecha.split("/");
+                var diaCumple = FechaNac[0];
+                var mmCumple = FechaNac[1];
+                var yyyyCumple = FechaNac[2];
+                if (mmCumple.substr(0, 1) == 0) {
+                    mmCumple = mmCumple.substring(1, 2);
+                }
+                if (diaCumple.substr(0, 1) == 0) {
+                    diaCumple = diaCumple.substring(1, 2);
+                }
+                var edad = yyyyActual - yyyyCumple;
+                if ((mmActual < mmCumple) || (mmActual == mmCumple && diaActual < diaCumple)) {
+                    edad--;
+                }
+                return edad;
+            }
+
+
         </script>
     </head>
     <body>
@@ -83,5 +129,9 @@
             <input type="button" id="btnDel" value="Eliminar Fila" onclick="deleterow()">
         </p>
         <table id="dg"></table>
+
+        <p>
+            <input id="dbFecNac" />
+        </p>
     </body>
 </html>
