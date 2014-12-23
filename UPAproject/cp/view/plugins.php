@@ -6,3 +6,4 @@
 <script src="<?= $cad ?>js/funcgeneral.js"></script>
 <script src="<?= $cad ?>js/jqueryeasy/jquery.easyui.min.js"></script>
 <script src="<?= $cad ?>js/jqueryeasy/locale/easyui-lang-es.js"></script>
+<script src="<?= $cad ?>js/jquery.maskedinput.js"></script>
