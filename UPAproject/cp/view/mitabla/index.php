@@ -80,11 +80,15 @@
                     formatter: myformatter,
                     parser: myparser,
                     onSelect: function (date) {
-                        alert(calcular_edad(myformatter(date)));
+                        $('#txtEdad').val(calcular_edad(myformatter(date)));
+                    },
+                    onChange: function () {
+                        var date = $('#dbFecNac').datebox('getValue');
+                        $('#txtEdad').val(calcular_edad(date));
                     }
-                }).datebox('textbox').mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+                }).datebox('textbox').mask("99/99/9999", {placeholder: "  "});//dd/mm/yyyy
             }
-            
+
         </script>
     </head>
     <body>
@@ -98,6 +102,7 @@
 
         <p>
             <input id="dbFecNac" />
+            <input type="text" id="txtEdad" >
         </p>
     </body>
 </html>
