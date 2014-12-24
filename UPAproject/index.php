@@ -11,6 +11,7 @@
         <script type="text/javascript">
             var data = 'mypage';
             $(function () {
+                alert('jajajajaja');
                 $('#loginsys').click(function () {
                     $("#msgrpta").show();
                     setTimeout(function () {
