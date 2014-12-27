@@ -135,6 +135,10 @@
                     }
                 });
             }
+
+            function botones() {
+                
+            }
         </script>
     </head>
     <body>
@@ -156,9 +160,9 @@
                 </p>
 
                 <div id="toolbar">
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="Agregar()">Agregar</a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="Editar()">Editar</a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="Eliminar()">Eliminar</a>
+                    <a href="javascript:void(0)" id="btnAdd" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="Agregar()">Agregar</a>
+                    <a href="javascript:void(0)" id="btnEdi" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="Editar()">Editar</a>
+                    <a href="javascript:void(0)" id="btnDel" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="Eliminar()">Eliminar</a>
                 </div>
 
                 <div id="divRol">

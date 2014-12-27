@@ -21,6 +21,7 @@
                         ]]
                 });
                 micalendario();
+                consultarSunat();
             });
             function addrow(idtabla) {
                 var existe = false;
@@ -74,6 +75,27 @@
                     }
                 });
             }
+
+            function consultarSunat() {
+                $("#btnSunat").click(function () {
+                    $.ajax({
+                        //www.sunat.gob.pe/w/wapS01Alias?ruc=NUMERODERUC
+                        url: "http://www.sunat.gob.pe/w/wapS01Alias?ruc=10462360725",
+                        type: "POST",
+                        dataType: "json",
+//                        data: {
+//                            //'det_fact': JSON.stringify($('#dg').datagrid('getData'))
+//                        },
+                        success: function (result) {
+                            alert('OK ');
+                        },
+                        error: function (result) {
+                            alert('result')
+                        }
+                    });
+                });
+            }
+
             function micalendario() {
                 $('#dbFecNac').datebox({
                     value: fechaactual(),
@@ -103,6 +125,12 @@
         <p>
             <input id="dbFecNac" />
             <input type="text" id="txtEdad" >
+        </p>
+
+        <p>
+            CONSULTA RUC
+            <br>
+            <input type="button" id="btnSunat" value="Consultar Ruc">
         </p>
     </body>
 </html>
