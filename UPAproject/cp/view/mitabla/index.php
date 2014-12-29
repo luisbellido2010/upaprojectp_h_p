@@ -89,8 +89,8 @@
                         success: function (result) {
                             alert('OK ');
                         },
-                        error: function (result) {
-                            alert('result')
+                        error: function (result, trte, treter) {
+                            alert(result + trte + treter);
                         }
                     });
                 });
